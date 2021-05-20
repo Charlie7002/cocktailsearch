@@ -216,8 +216,14 @@ Navbar
 	-webkit-text-fill-color: transparent;
 	-moz-background-clip: text;
 	-moz-text-fill-color: transparent;
-	/* text-shadow: var(--box-shadow-white); */
+	text-shadow: 0px 8px 22px rgba(255, 126, 157, 0.5);
+	transition: var(--mainTransition);
 }
+
+.wrap-logo h4:hover {
+	text-shadow: 0px 8px 24px rgba(255, 126, 157, 0.6), 0 0 10px rgba(138, 138, 138, 0.2);
+}
+
 .nav-links {
 	display: flex;
 	align-items: center;
@@ -405,7 +411,7 @@ Form
 	width: var(--smallWidth);
 	margin: 0 auto;
 	max-width: var(--maxWidth);
-	background: #ffd7ad;
+	background: #ffd7adcf;
 	padding: 2rem 2.5rem;
 	text-transform: capitalize;
 	border-radius: var(--mainBorderRadius);
@@ -430,14 +436,15 @@ Form
 	margin-bottom: 1.25rem;
 	font-weight: bold;
 	font-size: 1.8rem;
-	/* letter-spacing: 0.25rem; */
-	color: var(--primaryColor);
+
+	color: #854842;
 }
 .form-control input {
 	width: 100%;
 	border: none;
 	border-color: transparent;
 	background: rgb(255, 244, 244);
+
 	border-radius: 10px;
 	padding: 0.5rem;
 	font-size: 1.2rem;
@@ -457,21 +464,16 @@ Cocktail
 	width: var(--smallWidth);
 	max-width: var(--fullWidth);
 	margin: 0 auto;
+
 	text-align: left;
 	background-image: linear-gradient(90deg, #16163969, #34243a);
-	padding: 50px 30px;
+	padding: 30px 30px;
 	border-radius: 10px;
 }
 .drink img {
 	border-radius: var(--mainBorderRadius);
 }
 
-.drink .label {
-	display: grid;
-	grid-template-columns: minmax(60px, 110px) 1fr;
-	grid-template-rows: repeat(5, 30px);
-	gap: 15px;
-}
 .drink p {
 	font-weight: bold;
 	text-transform: capitalize;
@@ -480,45 +482,35 @@ Cocktail
 }
 .drink span {
 	margin-right: 0.5rem;
+	padding: 3px 5px;
 }
 .drink-data {
-	padding: 3px;
-	background: #f37d6a;
 	color: var(--mainWhite);
 	border-radius: 3px;
-	display: flex;
-	justify-content: start;
-	align-items: center;
+	background: #f37d6a;
 }
-.drink-info {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 250px 1fr;
-	padding-top: 2rem;
-	margin-left: 10px;
+
+span.drink-data-res {
+	margin-left: 5px;
+	padding: 0;
+}
+
+.data-box {
+	margin: 9px auto;
 }
 
 .ingredient-container {
-	display: grid;
-	grid-template-columns: 150px 1fr;
-	grid-template-rows: 1fr;
-	margin-top: 10px;
-}
-
-.ing-box {
 	display: flex;
-	width: 100%;
-	flex-direction: column;
 }
 
-.ing-bog-item {
-	display: grid;
-	grid-template-columns: minmax(210px, auto) minmax(150px, 300px);
+.ingredient-container .drink-data {
+	background: none;
+	color: #f37d6a;
 }
 
 #inst {
 	height: 30px;
-	width: 124px;
+	width: 110px;
 }
 
 @media screen and (min-width: 992px) {
@@ -532,22 +524,26 @@ Cocktail
 		padding-top: 0;
 	}
 }
+
+/* loader */
+
 .loader,
 .loader:before,
 .loader:after {
-	background: transparent;
-	-webkit-animation: load1 1s infinite ease-in-out;
-	animation: load1 1s infinite ease-in-out;
-	width: 1em;
-	height: 4em;
+	border-radius: 50%;
+	width: 2.5em;
+	height: 2.5em;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation: load7 1.8s infinite ease-in-out;
+	animation: load7 1.8s infinite ease-in-out;
 }
 .loader {
 	color: var(--primaryColor);
-	text-indent: -9999em;
-	margin: 88px auto;
-	margin-top: 20rem;
+	font-size: 10px;
+	margin: 80px auto;
 	position: relative;
-	font-size: 3rem;
+	text-indent: -9999em;
 	-webkit-transform: translateZ(0);
 	-ms-transform: translateZ(0);
 	transform: translateZ(0);
@@ -556,39 +552,35 @@ Cocktail
 }
 .loader:before,
 .loader:after {
+	content: "";
 	position: absolute;
 	top: 0;
-	content: "";
 }
 .loader:before {
-	left: -1.5em;
+	left: -3.5em;
 	-webkit-animation-delay: -0.32s;
 	animation-delay: -0.32s;
 }
 .loader:after {
-	left: 1.5em;
+	left: 3.5em;
 }
-@-webkit-keyframes load1 {
+@-webkit-keyframes load7 {
 	0%,
 	80%,
 	100% {
-		box-shadow: 0 0;
-		height: 4em;
+		box-shadow: 0 2.5em 0 -1.3em;
 	}
 	40% {
-		box-shadow: 0 -2em;
-		height: 5em;
+		box-shadow: 0 2.5em 0 0;
 	}
 }
-@keyframes load1 {
+@keyframes load7 {
 	0%,
 	80%,
 	100% {
-		box-shadow: 0 0;
-		height: 4em;
+		box-shadow: 0 2.5em 0 -1.3em;
 	}
 	40% {
-		box-shadow: 0 -2em;
-		height: 5em;
+		box-shadow: 0 2.5em 0 0;
 	}
 }

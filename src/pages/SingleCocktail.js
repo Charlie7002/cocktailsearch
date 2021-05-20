@@ -88,21 +88,33 @@ const SingleCocktail = () => {
 					<img src={image} alt={name} />
 					<div className="drink-info">
 						<div className="label">
-							<span className="drink-data">Name :</span>
+							<div className="data-box">
+								<span className="drink-data">Name :</span>
 
-							<p>{name}</p>
+								<span className="drink-data-res">{name}</span>
+							</div>
+							<div className="data-box">
+								<span className="drink-data">Category :</span>
 
-							<span className="drink-data">Category :</span>
+								<span className="drink-data-res">{category}</span>
+							</div>
+							<div className="data-box">
+								<span className="drink-data">Info : </span>
 
-							<p>{category}</p>
-							<span className="drink-data">Info :</span>
+								<span className="drink-data-res">{info}</span>
+							</div>
+							<div className="data-box">
+								<span className="drink-data">Glass :</span>
 
-							<p>{info}</p>
-							<span className="drink-data">Glass :</span>
-							<p>{glass}</p>
-							<span className="drink-data">Instruction :</span>
+								<span className="drink-data-res">{glass}</span>
+							</div>
+							<div className="data-box">
+								<p>
+									<span className="drink-data">Instruction :</span>
+								</p>
 
-							<p>{instructions}</p>
+								<span className="drink-data-res">{instructions}</span>
+							</div>
 						</div>
 
 						<div className="ingredient-container">
@@ -114,7 +126,7 @@ const SingleCocktail = () => {
 									return (
 										item[0] !== null && (
 											<div className="ing-bog-item" key={`${item}${index}`}>
-												<span>{item[0]}</span> <span>{item[1]}</span>
+												<span>{item[0]}</span> - <span>{item[1]}</span>
 											</div>
 										)
 									);
