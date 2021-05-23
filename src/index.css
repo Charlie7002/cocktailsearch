@@ -411,7 +411,7 @@ Form
 	width: var(--smallWidth);
 	margin: 0 auto;
 	max-width: var(--maxWidth);
-	background: #ffd7adcf;
+	background: #ffffff0e;
 	padding: 2rem 2.5rem;
 	text-transform: capitalize;
 	border-radius: var(--mainBorderRadius);
@@ -427,7 +427,6 @@ Form
 
 .form-control input:focus {
 	background-color: rgb(253, 249, 242);
-
 	outline: none;
 }
 
@@ -436,19 +435,28 @@ Form
 	margin-bottom: 1.25rem;
 	font-weight: bold;
 	font-size: 1.8rem;
-
-	color: #854842;
+	color: #ff8b7f;
 }
+
+.form-control p {
+	color: var(--mainGrey);
+}
+
 .form-control input {
 	width: 100%;
 	border: none;
 	border-color: transparent;
-	background: rgb(255, 244, 244);
-
+	background: var(--darkGrey);
 	border-radius: 10px;
 	padding: 0.5rem;
 	font-size: 1.2rem;
 	color: var(--mainBackground);
+	transition: var(--mainTransition);
+}
+
+.form-control input:focus {
+	background: pink;
+	box-shadow: var(--box-shadow);
 }
 /*
 ======
@@ -522,6 +530,57 @@ span.drink-data-res {
 	}
 	.drink-info {
 		padding-top: 0;
+	}
+}
+
+@media (max-width: 620px) {
+	.wrap-logo img {
+		height: 30px;
+	}
+	.wrap-logo h4 {
+		font-size: 1rem;
+		margin: 0 0 0 10px;
+	}
+	.nav-center ul.nav-links li a {
+		font-size: 0.8rem;
+	}
+	form.search-form .form-control label {
+		text-align: center;
+		font-size: 1.2rem;
+	}
+
+	.section h2.gradient-text {
+		font-size: 1.5rem;
+	}
+	.cocktails-center {
+		margin: 0 15px;
+	}
+	.cocktails-center .cocktail {
+		margin-bottom: 0;
+	}
+	.cocktails-center .cocktail img {
+		height: 250px;
+	}
+	.cocktails-center .cocktail .cocktail-footer h3 {
+		font-size: 1.5rem;
+	}
+	.cocktails-center .cocktail .cocktail-footer h4 {
+		font-size: 0.8rem;
+	}
+	.cocktails-center .cocktail .cocktail-footer p {
+		font-size: 0.6rem;
+		margin-bottom: 25px;
+	}
+
+	.ingredient-container {
+		flex-direction: column;
+	}
+
+	.section.cocktail-section h2.section-title {
+		font-size: 1.2rem;
+	}
+	.section.cocktail-section .drink img {
+		margin-bottom: 25px;
 	}
 }
 
